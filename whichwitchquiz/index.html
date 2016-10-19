@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Which Witch?</title>
+
+<style>
+body {
+background-color: #570D74;
+font-family:  "Courier New", Courier, monospace;
+font-size: 16px
+}
+
+#main {
+width: 80%;
+max-width: 800px;
+border: 10px black solid;
+margin: auto;
+padding: 40px;
+background-color: white;
+border-radius: 10px;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+<div id="main">
+
+<img src="whichwitch.jpg" width="100%">
+
+<form  id="form1" action=" ">
+<p><h3>Which witch had an evil cousin named Serena?</h3></p>
+<input type="radio" name="cousin" value="0" />Sabrina from Sabrina the Teenage Witch.<br />
+<input type="radio" name="cousin" value="10" />Samantha from Bewitched.<br />
+<input type="radio" name="cousin" value="0" />Marnie from Halloween Town.<br />
+<input type="radio" name="cousin" value="0" />Bonnie Bennet from The Vampire Diaries.<br />
+
+<p><h3>Which witch twitches her nose to invoke her magic?</h3></p>
+<input type="radio" name="twitch" value="0" />Alex Fielding from Twitches.<br />
+<input type="radio" name="twitch" value="0" />Jeannie from I Dream of Jeannie.<br />
+<input type="radio" name="twitch" value="0" />Cam Barnes from Twitches.<br />
+<input type="radio" name="twitch" value="10" />Samantha from Bewitched.<br />
+
+<p><h3>How many witch sisters were there in Charmed?</h3></p>
+<input type="radio" name="sisters" value="0" />2<br />
+<input type="radio" name="sisters" value="0" />3<br />
+<input type="radio" name="sisters" value="10" />4<br />
+<input type="radio" name="sisters" value="0" />5<br />
+
+<p><h3>Which witch lives in a manor on a Nexus?</h3></p>
+<input type="radio" name="nexus" value="0" />Cordelia Foxx from American Horror Story: Coven. <br />
+<input type="radio" name="nexus" value="10" />Piper Halliwell from Charmed.<br />
+<input type="radio" name="nexus" value="0" />Sabrina the Teenage Witch.<br />
+<input type="radio" name="nexus" value="0" />Marnie from Halloween Town.<br />
+
+<p><h3>Which witch was the next Supreme on AHS: Coven?</h3></p>
+<input type="radio" name="supreme" value="0" />Fiona Goode.<br />
+<input type="radio" name="supreme" value="0" />Zoe Benson.<br />
+<input type="radio" name="supreme" value="10" />Cordelia Foxx.<br />
+<input type="radio" name="supreme" value="0" />Madison Montgomery.<br />
+
+<p><h3>Wich Witch is burned at the stake?</h3></p>
+<input type="radio" name="stake" value="0" />Alexandra Medford.<br />
+<input type="radio" name="stake" value="10" />Myrtle Snow.<br />
+<input type="radio" name="stake" value="0" />Winifred Sanderson.<br />
+<input type="radio" name="stake" value="0" />DID SOMEONE SAY STAY STEAK???<br />
+
+<p><h3>How old is Sabrina when she finds out about her powers in Sabrina the Teenage Witch?</h3></p>
+<input type="radio" name="age" value="0" />18 years old.<br />
+<input type="radio" name="age" value="0" />17 years old.<br />
+<input type="radio" name="age" value="10" />16 years old.<br />
+<input type="radio" name="age" value="0" />15 years old.<br />
+
+
+<p><h3>Which witch is Glinda the Good?</h3></p>
+<input type="radio" name="good" value="0" />The Wicked Witch of the East.<br />
+<input type="radio" name="good" value="0" />The Wicked Witch of the West.<br />
+<input type="radio" name="good" value="0" />The Good Witch of the North.<br />
+<input type="radio" name="good" value="10" />The Good Witch of the South.<br />
+
+<p><h3>How many witches were there in The Craft?</h3></p>
+<input type="radio" name="witches" value="10" />One<br />
+<input type="radio" name="witches" value="0" />Two<br />
+<input type="radio" name="witches" value="0" />Three<br />
+<input type="radio" name="witches" value="0" />Four<br />
+
+
+<p><h3>What was the final ingredient in the Sanderson Sisters life potion?</h3></p>
+<input type="radio" name="potion" value="10" />A bite of thine own tongue.<br />
+<input type="radio" name="potion" value="0" />Two drop sof oil of boil.<br />
+<input type="radio" name="potion" value="0" />Dash of pox.<br />
+<input type="radio" name="potion" value="0" />Dead mans toe.<br />
+
+
+<input type="submit" value="Submit">
+</form>
+
+
+
+
+<p><h1>Your grade is: <span id="grade">__</span></h1></p>
+<p id="grade2"></p>
+
+<script>
+
+document.getElementById("form1").onsubmit=function() {
+       cousin = parseInt(document.querySelector('input[name = "cousin"]:checked').value);
+	   twitch = parseInt(document.querySelector('input[name = "twitch"]:checked').value);
+	   sisters = parseInt(document.querySelector('input[name = "sisters"]:checked').value);
+	   nexus = parseInt(document.querySelector('input[name = "nexus"]:checked').value);
+	   supreme = parseInt(document.querySelector('input[name = "supreme"]:checked').value);
+	   stake = parseInt(document.querySelector('input[name = "stake"]:checked').value);
+	   age = parseInt(document.querySelector('input[name = "age"]:checked').value);
+	   good = parseInt(document.querySelector('input[name = "good"]:checked').value);
+	   witches = parseInt(document.querySelector('input[name = "witches"]:checked').value);
+	   potion = parseInt(document.querySelector('input[name = "potion"]:checked').value);
+	   
+	   result = cousin + twitch + sisters + nexus + supreme + stake + age + good + witches + potion;
+	   
+	document.getElementById("grade").innerHTML = result;
+	
+	
+	
+if (result == 0) {result2 = "YOU KNOW NOTHING!<br /><br /><img src='scream.gif' width='75%' />"};
+if (result == 10) {result2 = "Wow, you only know onen thing? Pathetic.<br /><br /><img src='wow.gif' width='75%' />"};
+if (result == 20) {result2 = "Is this a joke to you?!?!?<br /><br /><img src='eww.gif' width='75%' />"};
+if (result == 30) {result2 = "Okay, are you just mocking us?<br /><br /><img src='gasp.gif' width='75%' />"};
+if (result == 40) {result2 = "WHATS WRONG WITH YOU??? <br /><br /><img src='eyes.gif' width='75%' />"};
+if (result == 50) {result2 = "Woah! You're half way there!<br /><br /><img src='zelda.gif' width='75%' />"};
+if (result == 60) {result2 = "Above average, keep trying!<br /><br /><img src='ha.gif' width='75%' />"};
+if (result == 70) {result2 = "Oh c'mon, you can do better than that!<br /><br /><img src='better.gif' width='75%' />"};
+if (result == 80) {result2 = "SO CLOSE!!!<br /><br /><img src='close.gif' width='75%' />"};
+if (result == 90) {result2 = "Kicking butt and taking names!<br /><br /><img src='kick.gif' width='75%' />"};
+if (result == 100) {result2 = "YOU GOT THEM ALL RIGHT!!!<br /><br /><img src='bad.gif' width='75%' />"};
+
+document.getElementById("grade2").innerHTML = result2;
+
+
+
+
+
+
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+</script>
+
+
+
+</div>
+</body>
+</html>
